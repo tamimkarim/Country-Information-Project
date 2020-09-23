@@ -1,21 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './Home/Home';
+import NoMatch from './NoMatch/NoMatch';
+
 
 function App() {
-  const [country, setCountry] = useState([]);
-
-  useEffect(() => {
-    fetch('https://restcountries.eu/rest/v2/all')
-    .then(res => res.json())
-    .then(data => setCountry(data))
-
-  },[])
+  
   return (
-    <div className="App">
-      <h4>Country Number: {country.length} </h4>
+    <Router>
+      <Switch>
+        <Route path="/home">
+           <Home></Home>
+        </Route>
+        <Route exact path="/">
+           <Home/>
+        </Route>
+        <Route path="*">
+          <NoMatch/>
+        </Route>
 
 
-    </div>
+
+      </Switch>
+      
+
+    </Router>
   );
 }
 
