@@ -6,6 +6,9 @@ const Home = () => {
 
      useEffect(() => {
     fetch('https://restcountries.eu/rest/v2/all')
+    //https://restcountries.eu/rest/v2
+    //https://restcountries.eu/rest/v2/name/{name}
+    //By code : https://restcountries.eu/rest/v2/alpha/{code}
     .then(res => res.json())
     .then(data => setCountry(data))
 

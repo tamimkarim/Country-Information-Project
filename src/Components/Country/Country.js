@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Country.css';
 
 const Country = (props) => {
-  const {name,population, flag, capital} = props.country;
+  const {name,population, flag, capital, alpha2Code} = props.country;
   //numericCode is Unique
   
     return (
@@ -17,8 +18,9 @@ const Country = (props) => {
                 Capital : {capital}
                 <br/>
                 Population : {population}
+                
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="outline-info"><Link to={`/country/${name}`}>Show details about {name}</Link></Button>
             </Card.Body>
             </Card> 
            </div>

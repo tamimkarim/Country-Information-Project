@@ -8,27 +8,32 @@ import {
 } from "react-router-dom";
 import Home from './Home/Home';
 import NoMatch from './NoMatch/NoMatch';
+import CountryDetail from './Components/CountryDetail/CountryDetail';
+
 
 
 function App() {
-  
+
   return (
     <Router>
       <Switch>
         <Route path="/home">
-           <Home></Home>
+          <Home></Home>
+        </Route>
+        <Route path="/country/:countryId">
+          <CountryDetail/>
         </Route>
         <Route exact path="/">
-           <Home/>
+          <Home />
         </Route>
         <Route path="*">
-          <NoMatch/>
+          <NoMatch />
         </Route>
 
 
 
       </Switch>
-      
+
 
     </Router>
   );
