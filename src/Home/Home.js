@@ -4,8 +4,8 @@ import Country from '../Components/Country/Country';
 
 const Home = () => {
     const [country, setCountry] = useState([]);
-
-     useEffect(() => {
+    
+    useEffect(() => {
     fetch('https://restcountries.eu/rest/v2/all/')
     //https://restcountries.eu/rest/v2
     //https://restcountries.eu/rest/v2/name/{name}
