@@ -3,8 +3,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './Home/Home';
 import NoMatch from './NoMatch/NoMatch';
@@ -20,7 +19,7 @@ function App() {
         <Route path="/home">
           <Home></Home>
         </Route>
-        <Route path="/country/:countryId">
+        <Route path="/country/:countryDetails">
           <CountryDetail/>
         </Route>
         <Route exact path="/">

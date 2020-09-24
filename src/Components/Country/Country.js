@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Country.css';
 
 const Country = (props) => {
-  const {name,population, flag, capital, alpha2Code} = props.country;
+  const {name,population, flag, capital} = props.country;
   //numericCode is Unique
   
     return (
@@ -20,7 +20,7 @@ const Country = (props) => {
                 Population : {population}
                 
                 </Card.Text>
-                <Button variant="outline-info"><Link to={`/country/${name}`}>Show details about {name}</Link></Button>
+                <Link to={`/country/${name}`}> <Button variant="outline-info">Show details about {name} </Button></Link>
             </Card.Body>
             </Card> 
            </div>

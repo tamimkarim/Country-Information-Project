@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
 import Country from '../Components/Country/Country';
 
 const Home = () => {
     const [country, setCountry] = useState([]);
 
      useEffect(() => {
-    fetch('https://restcountries.eu/rest/v2/all')
+    fetch('https://restcountries.eu/rest/v2/all/')
     //https://restcountries.eu/rest/v2
     //https://restcountries.eu/rest/v2/name/{name}
     //By code : https://restcountries.eu/rest/v2/alpha/{code}
@@ -14,11 +15,13 @@ const Home = () => {
 
   },[])
     return (
-        <div>
-            <h4>Country Number: {country.length} </h4>
-      {
-        country.map(country => <Country country ={country} ></Country> )
-      }
+        <div className="App">
+ 
+            <Button variant="outline-info">Country Number: {country.length} </Button>
+              {
+                country.map(country => <Country country ={country} ></Country> )
+                
+              }
         </div>
     );
 };
