@@ -11,14 +11,13 @@ const CountryDetail = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setCountry(data[0]));
-
     }, [])
     return (
         <div>
             <h3>This is details of {countryDetails} </h3>
             <h5>This is : {name} </h5>
             <h6>Capital : {capital} </h6>
-
+ 
 
         </div>
     );
